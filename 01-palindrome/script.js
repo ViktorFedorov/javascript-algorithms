@@ -14,7 +14,16 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+    const punctuationMarks = ' .,!?:;"'
+    let pureString = ''
+
+    // удаляем лишние символы из строки
+    for (let i = 0; i < str.length; i++) {
+        if (punctuationMarks.includes(str[i])) continue
+        pureString += str[i]
+    }
+
+    return pureString.split('').reverse().join('').toLowerCase() === pureString.toLowerCase()
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
@@ -22,6 +31,7 @@ function palindrome(str) {
 console.log(palindrome('топот')); // должно быть true
 console.log(palindrome('Saippuakivikauppias')); // true
 console.log(palindrome('привет')); // false
+console.log(palindrome('О, лета тело!')); // true
 
 /*
  * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
