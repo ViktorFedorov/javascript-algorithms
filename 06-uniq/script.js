@@ -8,7 +8,14 @@
 */
 
 function uniq(arr) {
-    // Напишите код здесь
+    const resArr = []
+
+    // проверяем есть ли в массиве resArr значение из массива arr, если нет - пушим
+    arr.forEach((el, i) => {
+        if (!resArr.some((el) => el === arr[i])) resArr.push(arr[i])
+    })
+
+    return resArr
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
