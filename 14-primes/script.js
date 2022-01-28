@@ -6,8 +6,29 @@
  * 
 */
 
+function isPrime(n) {
+    if (n > 1) {
+        let countOfDividers = 0
+
+        for (let i = 1; i <= n; i++) {
+            if (n%i === 0 && n%n === 0) countOfDividers++
+        }
+
+        return  countOfDividers === 2
+    }
+
+    return false
+}
+
 function primes(num) {
-    // Напишите код здесь
+    const primesNums = []
+
+    // воспользуемся функцией из 9й задачи для проверки числа на простое
+    for (let i = 2; i <= num; i++) {
+        if (isPrime(i)) primesNums.push(i)
+    }
+
+    return primesNums
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
