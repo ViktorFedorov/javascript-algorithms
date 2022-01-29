@@ -11,13 +11,13 @@
 function fibonacci(n) {
 
     // пока не придумал как не хардкодить первые 2 знака в последовательности
-    const FibonacciSequence = [0, 1]
+    const fibonacciSequence = [0, 1]
 
     for (let i = 1; i <= n; i++) {
-        FibonacciSequence.push(FibonacciSequence[i - 1] + FibonacciSequence[i])
+        fibonacciSequence.push(fibonacciSequence[i - 1] + fibonacciSequence[i])
     }
 
-    return FibonacciSequence[n - 1]
+    return fibonacciSequence[n - 1]
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
